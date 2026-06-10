@@ -1,0 +1,5 @@
+com\example\demo\service\EmailService.class
+com\example\demo\config\RabbitMQConfig.class
+com\example\demo\dto\BookingCreatedEvent.class
+com\example\demo\listener\BookingEventListener.class
+com\example\demo\NotificationServiceApplication.class

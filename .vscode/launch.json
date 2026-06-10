@@ -1,0 +1,119 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Eureka Server",
+            "request": "launch",
+            "mainClass": "com.example.demo.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "cwd": "${workspaceFolder}/eureka-server",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Auth Service",
+            "request": "launch",
+            "mainClass": "com.example.demo.AuthServiceApplication",
+            "projectName": "auth-service",
+            "cwd": "${workspaceFolder}/auth-service",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "SPRING_DATASOURCE_URL": "jdbc:mysql://localhost:3307/bookmyshow_auth_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+                "SPRING_DATASOURCE_USERNAME": "root",
+                "SPRING_DATASOURCE_PASSWORD": "Qwerty@12",
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Movie Service",
+            "request": "launch",
+            "mainClass": "com.example.demo.MovieServiceApplication",
+            "projectName": "movie-service",
+            "cwd": "${workspaceFolder}/movie-service",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "SPRING_DATASOURCE_URL": "jdbc:mysql://localhost:3307/bookmyshow_movie_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+                "SPRING_DATASOURCE_USERNAME": "root",
+                "SPRING_DATASOURCE_PASSWORD": "Qwerty@12",
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Booking Service",
+            "request": "launch",
+            "mainClass": "com.example.demo.BookingServiceApplication",
+            "projectName": "booking-service",
+            "cwd": "${workspaceFolder}/booking-service",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "SPRING_DATASOURCE_URL": "jdbc:mysql://localhost:3307/bookmyshow_booking_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true",
+                "SPRING_DATASOURCE_USERNAME": "root",
+                "SPRING_DATASOURCE_PASSWORD": "Qwerty@12",
+                "REDIS_HOST": "localhost",
+                "REDIS_PORT": "6379",
+                "RABBITMQ_HOST": "localhost",
+                "RABBITMQ_PORT": "5672",
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false"
+            }
+        },
+        {
+            "type": "java",
+            "name": "Notification Service",
+            "request": "launch",
+            "mainClass": "com.example.demo.NotificationServiceApplication",
+            "projectName": "notification-service",
+            "cwd": "${workspaceFolder}/notification-service",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "RABBITMQ_HOST": "localhost",
+                "RABBITMQ_PORT": "5672",
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false",
+                "SMTP_USERNAME": "bmsclonee@gmail.com",
+                "SMTP_PASSWORD": "ueyp slnw gjzv zmge"
+            }
+        },
+        {
+            "type": "java",
+            "name": "API Gateway",
+            "request": "launch",
+            "mainClass": "com.example.demo.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "cwd": "${workspaceFolder}/api-gateway",
+            "vmArgs": "-XX:+TieredCompilation -XX:TieredStopAtLevel=1",
+            "env": {
+                "EUREKA_INSTANCE_PREFER_IP_ADDRESS": "false"
+            }
+        },
+        {
+            "type": "node",
+            "name": "React Frontend",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "cwd": "${workspaceFolder}/frontend",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run All Services",
+            "configurations": [
+                "Eureka Server",
+                "Movie Service",
+                "Booking Service",
+                "Notification Service",
+                "API Gateway",
+                "React Frontend"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+com\example\demo\dto\RegisterRequest.class
+com\example\demo\config\SecurityConfig.class
+com\example\demo\controller\AuthController.class
+com\example\demo\dto\AuthRequest.class
+com\example\demo\util\JwtTokenUtil.class
+com\example\demo\model\User.class
+com\example\demo\dto\AuthResponse.class
+com\example\demo\AuthServiceApplication.class
+com\example\demo\repository\UserRepository.class
